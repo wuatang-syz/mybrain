@@ -674,3 +674,9 @@ body:has(.brain-view:hover, .brain-view :focus-visible) .tooltip .tooltip-arrow 
 .brain-license-purchase { margin-block: 16px; }
 .brain-license-qr { display: block; width: 360px; max-width: 100%; height: auto; margin-block: 12px; }
 
+
+/* Interaction states shared by graph views. */
+.brain-connection-preview.is-hidden { display: none; }
+.brain-cursor-grab { cursor: grab; }
+.brain-cursor-pointer { cursor: pointer; }
+.brain-cursor-grabbing { cursor: grabbing; }

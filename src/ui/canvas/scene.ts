@@ -26,7 +26,7 @@ export class Scene {
     this.nodeLayer.className = 'brain-nodes';
     this.connector = doc.createElementNS(SVG_NS, 'path');
     this.connector.classList.add('brain-connection-preview');
-    this.connector.style.display = 'none';
+    this.connector.classList.add('is-hidden');
     this.world.append(this.svg, this.labels, this.nodeLayer);
     root.append(this.world);
   }
@@ -157,7 +157,7 @@ export class Scene {
   }
 
   connect(source?: Point, target?: Point, sourceSide?: PortSide, targetSide?: PortSide): void {
-    this.connector.style.display = source && target ? '' : 'none';
+    this.connector.classList.toggle('is-hidden', !source || !target);
     if (source && target) {
       const bend = Math.max(60, Math.min(180, Math.hypot(target.x - source.x, target.y - source.y) * .4));
       const control = (point: Point, side?: PortSide): Point => ({

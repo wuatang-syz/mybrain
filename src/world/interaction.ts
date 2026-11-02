@@ -82,7 +82,9 @@ export class WorldInteraction {
     if (!drag) {
       if (event.target === this.canvas && event.buttons === 0) {
         const body = this.hit(event); this.host.hover(body?.object.id);
-        this.canvas.style.cursor = body ? 'pointer' : 'grab';
+        this.canvas.classList.remove('brain-cursor-grabbing');
+        this.canvas.classList.toggle('brain-cursor-pointer', Boolean(body));
+        this.canvas.classList.toggle('brain-cursor-grab', !body);
       }
       return;
     }
@@ -101,12 +103,12 @@ export class WorldInteraction {
         if (member.object.role === 'member' && member.object.domain === drag.body.object.id) member.group.position.add(delta);
       }
     }
-    drag.body.group.position.copy(next); this.canvas.style.cursor = 'grabbing'; this.host.moved();
+    drag.body.group.position.copy(next); this.canvas.classList.remove('brain-cursor-grab', 'brain-cursor-pointer'); this.canvas.classList.add('brain-cursor-grabbing'); this.host.moved();
   }
   private up(event: PointerEvent): void {
     const drag = this.drag; if (!drag || event.pointerId !== drag.pointer) return;
     if (this.host.layoutEnabled?.()) {event.preventDefault(); event.stopImmediatePropagation();} this.drag = undefined; this.host.controls.enabled = true;
-    this.canvas.style.cursor = 'pointer';
+    this.canvas.classList.remove('brain-cursor-grab', 'brain-cursor-grabbing'); this.canvas.classList.add('brain-cursor-pointer');
     if (drag.moved) {this.lastClick = {id: '', time: 0}; if (this.host.layoutEnabled?.()) this.host.save(); return;}
     const id = drag.body.object.id; if (id === CENTER_ID) return;
     const now = Date.now(), double = this.lastClick.id === id && now - this.lastClick.time < 350;

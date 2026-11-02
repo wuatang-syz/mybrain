@@ -302,7 +302,8 @@ export class KnowledgeMapCanvas {
     if (this.host.hovered === hovered && this.host.hoverCard === card && this.host.hoverZone === zone) return;
     this.host.hovered = hovered; this.host.hoverCard = card; this.host.hoverZone = zone;
     const surface = this.renderer.interactiveEl;
-    surface.style.cursor = hit ? (hit.kind === 'card' ? 'grab' : 'pointer') : '';
+    surface.classList.toggle('brain-cursor-grab', hit?.kind === 'card');
+    surface.classList.toggle('brain-cursor-pointer', Boolean(hit) && hit?.kind !== 'card');
     surface.title = this.hoverHint(hit, hovered);
     this.schedule();
   }
@@ -319,7 +320,7 @@ export class KnowledgeMapCanvas {
   private clearHover(): void {
     if (!this.host.hovered && !this.host.hoverCard) return;
     this.host.hovered = null; this.host.hoverCard = null; this.host.hoverZone = null;
-    this.renderer.interactiveEl.style.cursor = ''; this.renderer.interactiveEl.title = '';
+    this.renderer.interactiveEl.classList.remove('brain-cursor-grab', 'brain-cursor-pointer'); this.renderer.interactiveEl.title = '';
     this.schedule();
   }
   private schedule(): void {
