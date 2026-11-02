@@ -1,0 +1,21 @@
+:root {font-family: 'Segoe UI','Microsoft YaHei',sans-serif; color-scheme: dark; --font-interface:'Segoe UI','Microsoft YaHei',sans-serif;}
+* {box-sizing:border-box;} body {margin:0; background:#071123; color:#d7e4f5;} button,input {font:inherit;}
+#workspace {display:flex; height:100vh; width:100vw; overflow:hidden;} #app {display:flex; flex-direction:column; height:100%; flex:1; min-width:0; position:relative; container-type:inline-size;}
+.universe-preview-toolbar {height:58px; flex-shrink:0; display:flex; align-items:center; gap:14px; padding:0 20px; background:#0a1426; border-bottom:1px solid #243451;}
+.universe-preview-toolbar button {color:#c5d9fa; background:#17284a; border:1px solid #314869; border-radius:6px; padding:7px 12px; cursor:pointer;}
+.universe-preview-toolbar small {margin-left:auto; font-size:11px; color:#7990ad;}
+.universe-preview-stage {position:relative; flex:1; min-height:0;} .universe-preview-footer {height:35px; display:flex; align-items:center; justify-content:space-between; padding:0 18px; background:#091326; color:#859abc; font-size:11px;}
+.universe-preview-footer .controls {display:flex;align-items:center;gap:10px;} .universe-preview-footer button {border:0;background:transparent;color:#b6c6df;cursor:pointer;display:grid;place-items:center;}
+#note-pane {width:30%; min-width:240px; padding:22px; background:#111b2c; border-left:1px solid #30405a; overflow:auto;}
+#note-pane[hidden] {display:none;} #note-pane h1 {font-size:24px;} #note-pane pre {white-space:pre-wrap; font:13px/1.8 'Segoe UI','Microsoft YaHei',sans-serif;color:#bac9df;}
+#note-pane a {color:#9cbfff;} #note-pane button {float:right;background:transparent;border:0;color:#bccde6;cursor:pointer;}
+.preview-search {position:absolute;right:22px;top:19px;z-index:6;display:flex;gap:8px;align-items:center;background:#0b1b35df;color:#a5bad8;border:1px solid #46689577;padding:6px 10px;border-radius:7px;font-size:12px;cursor:pointer;}
+.preview-search svg {width:14px;height:14px;}
+/* The preview search is wider than the production 32px icon, so the rail keeps its right edge. */
+.universe-preview-stage .brain-world-actions {top:57px;right:22px;}
+dialog {background:#0b172b;color:#d9e6fa;border:1px solid #365277;border-radius:12px;width:min(460px,90vw);padding:20px;box-shadow:0 25px 100px #000a;}
+dialog::backdrop {background:#0009;} dialog input {width:100%;padding:12px;background:#15243b;border:1px solid #3b5679;color:#eef5ff;border-radius:7px;}
+.preview-results {display:flex;flex-direction:column;max-height:360px;overflow:auto;margin-top:12px;gap:4px;}
+.preview-results button {padding:10px;text-align:left;color:#ccd9ed;border:0;background:#14233a;cursor:pointer;border-radius:5px;}
+.universe-preview-toolbar select {color:#c5d9fa; background:#17284a; border:1px solid #314869; border-radius:6px; padding:6px 9px;}
+@media(max-width:680px){#note-pane {position:absolute;z-index:10;right:0;top:0;bottom:0;width:80%;box-shadow:-20px 0 50px #0008;} .universe-preview-toolbar small{display:none;}}

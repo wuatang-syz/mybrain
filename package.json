@@ -1,0 +1,36 @@
+{
+  "name": "obsidian-brain",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc --noEmit && node esbuild.config.mjs production",
+    "test": "vitest run",
+    "lint": "eslint src tests dev",
+    "preview": "node scripts/preview.mjs",
+    "package": "npm run build && node scripts/package.mjs",
+    "release:check": "node scripts/release-check.mjs",
+    "sync": "npm run test && npm run lint && npm run build && node scripts/sync-plugin.mjs"
+  },
+  "dependencies": {
+    "d3-force": "^3.0.0",
+    "three": "^0.186.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@types/d3-force": "^3.0.10",
+    "@types/node": "^22.15.17",
+    "@types/three": "^0.186.0",
+    "esbuild": "0.25.5",
+    "eslint": "^9.39.4",
+    "globals": "^17.6.0",
+    "jsdom": "^26.1.0",
+    "lucide": "^1.42.0",
+    "obsidian": "latest",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.59.1",
+    "vitest": "^3.2.4",
+    "yaml": "^2.9.0"
+  }
+}
