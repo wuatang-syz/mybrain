@@ -43,8 +43,8 @@ export default class BrainPlugin extends Plugin {
     this.licensed = !!await verifyLicense(this.data.licenseToken ?? '', commerce.publicKey);
     if (!this.licensed) {
       this.registerView(VIEW_TYPE, leaf => new BrainView(leaf, this));
-      this.addRibbonIcon('brain-circuit', '购买或激活 Mybrain', () => this.showLicense());
-      this.addCommand({id: 'open-brain', name: '购买或激活 Mybrain', callback: () => this.showLicense()});
+      this.addRibbonIcon('brain-circuit', '购买或激活 TheMind', () => this.showLicense());
+      this.addCommand({id: 'open-brain', name: '购买或激活 TheMind', callback: () => this.showLicense()});
       this.addSettingTab(new BrainSettingTab(this.app, this));
       return;
     }

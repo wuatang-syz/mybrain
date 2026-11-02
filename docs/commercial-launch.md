@@ -33,10 +33,10 @@ node scripts/license-admin.mjs issue C:/private/mybrain-signing.pem VERIFIED-ORD
 ## 发布清单
 
 - 运行 `npm run sync` 验证并同步当前开发知识库；本地仍使用 `obsidian-brain` ID，不迁移现有设置。
-- 运行 `npm run package` 生成 `dist/mybrain`（不是收费上线确认）。
+- 运行 `npm run package` 生成 `dist/themind`（不是收费上线确认）。
 - 运行 `npm run release:check`，所有付款配置完整后才能通过。
 - 核查源码权属、现有 LICENSE、第三方依赖及图片授权；保留原作者声明，不能仅删掉模板版权来实现闭源。
-- 确认插件 ID `mybrain` 在官方目录唯一，核查最低 Obsidian 版本和原生图谱 API 兼容性。
+- 确认插件 ID `themind` 在官方目录唯一，核查最低 Obsidian 版本和原生图谱 API 兼容性。
 - 在干净知识库手测：无授权不改笔记、有效/无效授权、重启持久化、离线使用、旧数据迁移，以及微信/支付宝各一笔真实支付与售后。
 - 补充产品截图、商户主体、定价及退款条款后，创建 `0.2.0` GitHub Release，分别附加 main.js、manifest.json、styles.css，并按最新官方流程申请审核。当前未发布到 GitHub 或官方目录。
 

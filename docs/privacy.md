@@ -1,6 +1,6 @@
 # Privacy
 
-Mybrain reads vault notes and relationships locally. Editing relationships can update note links and folders. Activation verifies an ECDSA signature locally and does not access a licensing server. No notes, filenames, device fingerprint, analytics events or license tokens are uploaded by this implementation.
+TheMind reads vault notes and relationships locally. Editing relationships can update note links and folders. Activation verifies an ECDSA signature locally and does not access a licensing server. No notes, filenames, device fingerprint, analytics events or license tokens are uploaded by this implementation.
 
 The license token is stored in plugin data.json with settings. It contains a random license ID, product, plan and issue timestamp; no customer name, email or payment order number. Protect the token and be aware that vault backup/sync may copy it.
 

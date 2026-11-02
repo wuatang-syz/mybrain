@@ -1,6 +1,6 @@
 {
-  "id": "mybrain",
-  "name": "Mybrain",
+  "id": "themind",
+  "name": "TheMind",
   "version": "0.2.0",
   "minAppVersion": "1.8.7",
   "description": "Organize notes with parent, child, jump and sibling relationships in a focus-centered graph.",

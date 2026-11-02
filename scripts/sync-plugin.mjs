@@ -11,7 +11,7 @@ await mkdir(target, { recursive: true });
 for (const file of files) await copyFile(resolve(projectRoot, file), `${target}/${file}`);
 
 const localManifest = JSON.parse(await readFile(resolve(projectRoot, 'manifest.json'), 'utf8'));
-// Keep the existing development vault's ID/folder and settings intact. Release uses mybrain.
+// Keep the existing development vault's ID/folder and settings intact. Release uses themind.
 localManifest.id = 'obsidian-brain';
 await writeFile(`${target}/manifest.json`, JSON.stringify(localManifest, null, 2) + '\n');
 const installedManifest = JSON.parse(await readFile(`${target}/manifest.json`, 'utf8'));
